@@ -1,0 +1,24 @@
+{
+  "name": "natours-web",
+  "version": "1.0.0",
+  "description": "Lading Page for Natours Web",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/locaulker/natours-web.git"
+  },
+  "author": "Lawrence O. Caulker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/locaulker/natours-web/issues"
+  },
+  "homepage": "https://github.com/locaulker/natours-web#readme",
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  },
+  "dependencies": {}
+}
