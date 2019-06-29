@@ -14,15 +14,46 @@
 }
 
 
-// Media Query Manager
+// MEDIA QUERY MANAGER - Starts ===================
 /*
-0 		- 600px:			Phone
-600 	- 900px:			Tablet/Portrait Mode
-900 	- 1200px:			Tablet/Landscape Mode
-1200 	- 1800px:			Normal DeskTop Computers
-1800 +	------:			Large DeskTop Computers
+0 		- 600px:	Phone
+600 	- 900px:	Tablet/Portrait Mode
+900 	- 1200px:	Tablet/Landscape Mode
+1200 	- 1800px:	Normal DeskTop Computers
+1800 +	- ------:		Large DeskTop Computers
+
+Breakpoint Argument Variables:
+* - phone
+* - tab-port
+* - tab-land
+* - lg-Desktop
+* 
+*   Units: Use 'em' instead of 'rem' 
+*   'rem' will NOT default font-size changes
+*   Note:  1em = 16px
+
+======================================================
+Suggested ORDER to follow When writing Media Queries:
+======================================================
+* Base + Typography > 
+* General Layout + Grid >
+* Page Layout >
+* Components
 */
 
-@mixin respond-phone {
-	@media (max-width: 600px)
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) { @content };  //600px
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) { @content };   //900px
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) { @content };  //1200px
+  }
+  @if $breakpoint == lg-Desktop {
+    @media (min-width: 112.5em) { @content };  //1800px
+  }
 }
+// MEDIA QUERY MANAGER - Ends ========================
+
